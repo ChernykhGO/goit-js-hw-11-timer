@@ -48,11 +48,11 @@ class CountdownTimer {
       const currentTime = Date.now();
       this.countTime = targetDate - currentTime;
       const { days, hours, mins, secs } = this.getTimeComponents(this.countTime);
-      this.createTextContentForTimer({ days, hours, mins, secs });
+      this.updateClockface({ days, hours, mins, secs });
     }, 1000);
   }
 
-  end() {
+  endCount() {
     if (this.countTime <= 0) {
       clearInterval(this.timeInterval);
     }
@@ -67,10 +67,10 @@ class CountdownTimer {
   }
 
   pad(value) {
-    return String(value).padStart(2, "0");
+    return String(value).padStart(2, '0');
   }
 
-  createTextContentForTimer({ days, hours, mins, secs }) {
+  updateClockface({ days, hours, mins, secs }) {
     this.refs.daysField.textContent = days;
     this.refs.hoursField.textContent = hours;
     this.refs.minsField.textContent = mins;
@@ -78,7 +78,7 @@ class CountdownTimer {
   }
 }
 const countdownTimer = new CountdownTimer({
-  selector: "#timer-1",
+  selector: '#timer-1',
   targetDate: new Date("October 20, 2021"),
 });
 

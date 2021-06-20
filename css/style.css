@@ -35,3 +35,11 @@ body {
     padding-top: 5px;
     font-size: 16px;
   }
+
+  p{
+   font-family: system-ui;
+    font-weight: 100;
+    font-weight: 900;
+    font-size: 36px;
+    color: #29b1a5;
+  };
